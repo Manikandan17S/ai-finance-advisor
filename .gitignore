@@ -1,0 +1,39 @@
+# === Frontend (Vite - React) ===
+node_modules/
+dist/
+.vite/
+.env
+.env.*.local
+*.log
+
+# === Backend (Flask) ===
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+instance/
+*.db
+*.sqlite3
+*.log
+.env
+
+# === IDE/editor settings ===
+.vscode/
+.idea/
+*.swp
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === Deployment / Build Artifacts ===
+build/
+.cache/
+coverage/
+*.bak
+*.zip
+*.tar.gz
+*.tgz

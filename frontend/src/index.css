@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 88, 101, 242;
+  --secondary: 255, 107, 237;
+  --accent: 121, 218, 232;
+  --background: 13, 17, 23;
+  --card: 22, 27, 34;
+  --success: 56, 229, 77;
+  --warning: 255, 185, 46;
+  --error: 252, 84, 84;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white font-body antialiased;
+    background-image: 
+      radial-gradient(circle at 100% 0%, rgba(var(--primary), 0.1) 0%, transparent 40%),
+      radial-gradient(circle at 0% 100%, rgba(var(--secondary), 0.1) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-wider;
+  }
+
+  .glow {
+    @apply relative;
+  }
+  
+  .glow::before {
+    content: "";
+    @apply absolute -inset-0.5 rounded-lg bg-gradient-to-r from-primary/50 to-secondary/50 opacity-75 blur pointer-events-none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply relative bg-card/40 backdrop-blur-lg border border-white/5 rounded-xl overflow-hidden shadow-lg transition-all duration-300;
+  }
+  
+  .card:hover {
+    @apply border-white/10 shadow-xl;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-dark text-white shadow-md shadow-primary/25 hover:shadow-lg hover:shadow-primary/40;
+  }
+  
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary to-secondary-dark text-white shadow-md shadow-secondary/25 hover:shadow-lg hover:shadow-secondary/40;
+  }
+  
+  .btn-outline {
+    @apply border border-white/10 bg-card/40 backdrop-blur-sm hover:border-white/20 hover:bg-card/60;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 rounded-xl;
+  }
+}
+
+/* Animated background */
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
+}
