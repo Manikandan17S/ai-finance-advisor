@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -6,7 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Chat from './pages/Chat';
 import Settings from './pages/Settings';
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Layout>
@@ -19,6 +18,6 @@ function App() {
       </Layout>
     </Router>
   );
-}
+};
 
 export default App;
