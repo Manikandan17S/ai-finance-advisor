@@ -1,8 +1,5 @@
 {
-  "dependencies": {
-    "@vercel/analytics": "^1.5.0"
-  },
-  "devDependencies": {
-    "vite": "^6.3.5"
-  }
+  "buildCommand": "cd frontend && npm run build",
+  "outputDirectory": "frontend/dist",
+  "framework": "vite"
 }
