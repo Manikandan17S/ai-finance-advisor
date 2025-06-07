@@ -1,11 +1,15 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-# remove or comment out app.run(), Render uses Gunicorn or similar automatically
+
 app = Flask(__name__)
-CORS(app)  # Allow requests from frontend
+CORS(app)  # Enable CORS for frontend requests
+
+@app.route("/")
+def home():
+    return jsonify({'message': '🔥 AI Finance Advisor Backend is Live!'})
 
 @app.route('/api/hello', methods=['GET'])
 def hello():
     return jsonify({'message': 'Hello from Flask backend 👋'})
-if __name__ == '__main__':
-    app.run(debug=True)
+
+# No need for app.run() on Render!
