@@ -1,5 +1,5 @@
 services:
-    type: web
+  - type: web
     name: finance-backend
     env: python
     buildCommand: ""
