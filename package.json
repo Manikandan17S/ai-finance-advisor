@@ -1,6 +1,7 @@
 {
-  "projectRoot": "frontend",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite"
+  "name": "ai-finance-advisor",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  }
 }
