@@ -1,5 +1,4 @@
 flask
-flask-cors
-python-dotenv
-
-pip install -r requirements.txt
+openai
+requests
+pandas
